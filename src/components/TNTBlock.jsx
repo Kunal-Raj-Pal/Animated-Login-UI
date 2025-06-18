@@ -53,7 +53,7 @@ function TNTBlock() {
   }, [showBlast,loginStatus]);
 
   return (
-    <div className="relative flex flex-col justify-center items-center h-screen bg-red-400 overflow-hidden">
+    <div className="relative flex flex-col justify-center items-center h-screen bg-red-400 overflow-hidden p-3">
       {/* 💣 TNT blocks */}
       {showBlast &&
         Array.from({ length: 10 }).map((_, i) => (
@@ -73,7 +73,7 @@ function TNTBlock() {
       {/* 🔒 Login Form */}
       <form
         onSubmit={handleSubmit}
-        className="z-10 border border-white/30 w-1/3 h-1/2 p-3 text-center rounded-xl bg-white/10 backdrop-blur-md"
+        className="z-10 border border-white/30 w-full h-1/2 p-3 text-center rounded-xl bg-white/10 backdrop-blur-md sm:w-1/3"
       >
         <h1 className="text-4xl font-bold">Login</h1>
         <input
