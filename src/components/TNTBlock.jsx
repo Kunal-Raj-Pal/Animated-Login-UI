@@ -47,6 +47,11 @@ function TNTBlock() {
           duration: 5,
           ease: 'power2.inOut',
           stagger: 0.2, // One after another
+          onComplete: () => {
+            // Reset state after animation
+            setShowBlast(false);
+            tntRefs.current = []; // Clear references
+          },
         }
       );
     }
@@ -62,7 +67,7 @@ function TNTBlock() {
             ref={addToRefs}
             src="/tnt.png"
             alt="TNT"
-            className="w-20 h-20 absolute"
+            className="w-10 h-10 absolute sm:w-20 sm:h-20"
             style={{
               top: 0,
               left: `${10 + i * 8}%`, // slightly spread out
